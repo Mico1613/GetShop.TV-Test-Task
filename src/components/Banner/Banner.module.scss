@@ -1,7 +1,20 @@
 .banner {
   position: absolute;
-  bottom: 0;
+  bottom: 200px;
   right: 0;
+  z-index: 1;
+  transform: translateX(250px);
+}
+.animation {
+  animation: showBanner 0.5s forwards;
+}
+@keyframes showBanner {
+  0% {
+    transform: translateX(250px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 .flex {
   display: flex;
@@ -14,11 +27,25 @@
 .suptext {
   text-align: center;
   margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2rem;
 }
 .imageWrapper {
   margin-bottom: 20px;
 }
 .subtext {
-  max-width: 125px;
+  font-weight: 400;
+  max-width: 126px;
   text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.2rem;
+}
+.button {
+  width: 155px;
+  background-color: #000;
+  color: #86d3f4;
+  padding: 17px 0;
+  cursor: pointer;
 }
