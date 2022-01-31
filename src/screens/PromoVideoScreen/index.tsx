@@ -1,17 +1,11 @@
 import React from "react";
-
+import video from "../../assets/video.mp4";
 type Props = {};
 
 function PromoVideoScreen({}: Props) {
   return (
-    <video
-      controls
-      width="1280px"
-      height="720px"
-      src="../../assets/video.mp4"
-      autoPlay
-    >
-      <source src="../../assets/video.mp4" type="video/mp4" />
+    <video autoPlay loop muted width="1280px" height="720px">
+      <source src={video} type="video/mp4" />
       KEK
     </video>
   );
