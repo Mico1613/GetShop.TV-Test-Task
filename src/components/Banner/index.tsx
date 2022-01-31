@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import BannerStyles from "./Banner.module.scss";
 import qr from "../../assets/qr.png";
-type Props = {};
+type Props = {
+  switchToSecondScreen: () => void;
+};
 
-function Banner({}: Props) {
+function Banner({ switchToSecondScreen }: Props) {
   const [bannerVisibility, setBannerVisibility] = useState(false);
   useEffect(() => {
     setTimeout(() => {
@@ -31,7 +33,9 @@ function Banner({}: Props) {
           />
         </div>
         <p className={BannerStyles.subtext}>Сканируйте QR-код или нажмите ОК</p>
-        <button className={BannerStyles.button}>ОК</button>
+        <button onClick={switchToSecondScreen} className={BannerStyles.button}>
+          ОК
+        </button>
       </div>
     </div>
   );
