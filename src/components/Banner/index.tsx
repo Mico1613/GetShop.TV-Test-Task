@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BannerStyles from "./Banner.module.scss";
 import qr from "../../assets/qr.png";
 type Props = {};
 
 function Banner({}: Props) {
-  const [bannerVisibility, setBannerVisibility] = React.useState(false);
-  React.useEffect(() => {
+  const [bannerVisibility, setBannerVisibility] = useState(false);
+  useEffect(() => {
     setTimeout(() => {
       setBannerVisibility(true);
     }, 4500);
