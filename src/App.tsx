@@ -5,13 +5,13 @@ import InputNumberScreen from "./screens/InputNumberScreen";
 import PromoVideoScreen from "./screens/PromoVideoScreen";
 function App() {
   const screens = {
-    first: { id: 1, component: <PromoVideoScreen /> },
-    second: { id: 2, component: <InputNumberScreen /> },
-    third: { id: 3, component: <InfoScreen /> },
+    first: <PromoVideoScreen />,
+    second: <InputNumberScreen />,
+    third: <InfoScreen />,
   };
   return (
     <div className={AppStyles.app}>
-      <main className={AppStyles.container}>{screens.first.component}</main>
+      <main className={AppStyles.container}>{screens.first}</main>
     </div>
   );
 }
