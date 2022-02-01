@@ -1,4 +1,5 @@
 import React from "react";
+import Checkbox from "../../components/Checkbox";
 import InputNumbersField from "../../components/InputNumbersField";
 import ScreenLayout from "../../components/ScreenLayout";
 import InputNumberScreenStyles from "./InputNumberScreen.module.scss";
@@ -25,15 +26,7 @@ function InputNumberScreen({
           и с Вами свяжется наш менеждер для дальнейшей консультации
         </h2>
         <div className={InputNumberScreenStyles.numbersPanel}></div>
-        <div className={InputNumberScreenStyles.checkboxWrapper}>
-          <input
-            className={InputNumberScreenStyles.checkboxEl}
-            type="checkbox"
-          />
-          <p className={InputNumberScreenStyles.checkboxText}>
-            Согласие на обработку персональных данных
-          </p>
-        </div>
+        <Checkbox />
         <button className={InputNumberScreenStyles.confirmBtn}>
           подтвердить номер
         </button>
