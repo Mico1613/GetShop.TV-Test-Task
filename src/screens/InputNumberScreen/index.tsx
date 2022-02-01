@@ -1,5 +1,6 @@
 import React from "react";
 import ScreenLayout from "../../components/ScreenLayout";
+import InputNumberScreenStyles from "./InputNumberScreen.module.scss";
 
 type Props = {
   switchToFirstScreen: () => void;
@@ -11,7 +12,30 @@ function InputNumberScreen({
   switchToThirdScreen,
 }: Props) {
   return (
-    <ScreenLayout switchToFirstScreen={switchToFirstScreen}></ScreenLayout>
+    <ScreenLayout switchToFirstScreen={switchToFirstScreen}>
+      <>
+        <h1 className={InputNumberScreenStyles.suptext}>
+          Введите ваш номер мобильного телефона
+        </h1>
+        <input className={InputNumberScreenStyles.input} type="text" />
+        <h2 className={InputNumberScreenStyles.subtext}>
+          и с Вами свяжется наш менеждер для дальнейшей консультации
+        </h2>
+        <div className={InputNumberScreenStyles.numbersPanel}></div>
+        <div className={InputNumberScreenStyles.checkboxWrapper}>
+          <input
+            className={InputNumberScreenStyles.checkboxEl}
+            type="checkbox"
+          />
+          <p className={InputNumberScreenStyles.checkboxText}>
+            Согласие на обработку персональных данных
+          </p>
+        </div>
+        <button className={InputNumberScreenStyles.confirmBtn}>
+          подтвердить номер
+        </button>
+      </>
+    </ScreenLayout>
   );
 }
 
