@@ -8,8 +8,17 @@ function Checkbox({}: Props) {
   return (
     <label htmlFor="checkbox" className={CheckboxStyles.checkboxWrapper}>
       <input className={CheckboxStyles.hidden} type="checkbox" id="checkbox" />
-      <span className={CheckboxStyles.checkboxEl}>
-        <img src={check} alt="галочка" />
+      <span
+        className={CheckboxStyles.checkboxEl}
+        onClick={() => setCheckboxState(!checkboxState)}
+      >
+        <img
+          src={check}
+          alt="галочка"
+          className={`${
+            !checkboxState ? CheckboxStyles.hidden : CheckboxStyles.visible
+          }`}
+        />
       </span>
       <p className={CheckboxStyles.checkboxText}>
         Согласие на обработку

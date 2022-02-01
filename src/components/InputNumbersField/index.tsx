@@ -5,7 +5,6 @@ type Props = {};
 
 function InputNumbersField({}: Props) {
   const [inputValue, setInputValue] = useState<string>("+7(___)___-__-__");
-  console.log(inputValue);
 
   return (
     <IMaskInput
