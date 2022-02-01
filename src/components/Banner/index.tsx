@@ -10,7 +10,7 @@ function Banner({ switchToSecondScreen }: Props) {
   useEffect(() => {
     setTimeout(() => {
       setBannerVisibility(true);
-    }, 4500);
+    }, 5000);
   }, []);
 
   return (
@@ -21,8 +21,9 @@ function Banner({ switchToSecondScreen }: Props) {
     >
       <div className={BannerStyles.flex}>
         <p className={BannerStyles.suptext}>
-          ИСПОЛНИТЕ МЕЧТУ ВАШЕГО МАЛЫША!
-          <br /> ПОДАРИТЕ ЕМУ ВАН ДАММА!
+          Исполните мечту вашего малыша!
+          <br />
+          Подарите ему Ван Дамма!
         </p>
         <div className={BannerStyles.imageWrapper}>
           <img

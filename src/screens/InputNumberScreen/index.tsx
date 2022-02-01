@@ -1,9 +1,18 @@
-import React from 'react';
+import React from "react";
+import ScreenLayout from "../../components/ScreenLayout";
 
-type Props = {};
+type Props = {
+  switchToFirstScreen: () => void;
+  switchToThirdScreen: () => void;
+};
 
-function InputNumberScreen({}: Props) {
-  return <div>2</div>;
+function InputNumberScreen({
+  switchToFirstScreen,
+  switchToThirdScreen,
+}: Props) {
+  return (
+    <ScreenLayout switchToFirstScreen={switchToFirstScreen}></ScreenLayout>
+  );
 }
 
 export default InputNumberScreen;
