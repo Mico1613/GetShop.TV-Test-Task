@@ -25,7 +25,6 @@ function App() {
   };
 
   const [currentScreen, setCurrentScreen] = useState(screens.second);
-  console.log(currentScreen);
 
   return (
     <div className={AppStyles.app}>

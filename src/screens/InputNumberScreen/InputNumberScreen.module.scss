@@ -3,17 +3,31 @@
   line-height: 1.2em;
   margin-bottom: 13px;
 }
-.input {
+.inputWrapper {
   margin-bottom: 13px;
 }
 .subtext {
   font-size: 14px;
   line-height: 1.2em;
+  margin-bottom: 30px;
 }
 .numbersPannel {
-
+  display: grid;
+  margin-bottom: 30px;
 }
 
 .checkboxWrapper {
-    display: flex;
+  display: flex;
+  margin-bottom: 15px;
+}
+.confirmBtn {
+  border: 1px solid #4e4e4e;
+  padding: 12px 0;
+  width: 284px;
+  color: #4e4e4e;
+  font-size: 16px;
+  line-height: 1.2em;
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
 }

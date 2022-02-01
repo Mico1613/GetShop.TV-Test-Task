@@ -1,4 +1,5 @@
 import React from "react";
+import InputNumbersField from "../../components/InputNumbersField";
 import ScreenLayout from "../../components/ScreenLayout";
 import InputNumberScreenStyles from "./InputNumberScreen.module.scss";
 
@@ -17,7 +18,9 @@ function InputNumberScreen({
         <h1 className={InputNumberScreenStyles.suptext}>
           Введите ваш номер мобильного телефона
         </h1>
-        <input className={InputNumberScreenStyles.input} type="text" />
+        <div className={InputNumberScreenStyles.inputWrapper}>
+          <InputNumbersField />
+        </div>
         <h2 className={InputNumberScreenStyles.subtext}>
           и с Вами свяжется наш менеждер для дальнейшей консультации
         </h2>
