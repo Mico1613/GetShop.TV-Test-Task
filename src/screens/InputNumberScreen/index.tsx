@@ -14,11 +14,10 @@ function InputNumberScreen({
   switchToFirstScreen,
   switchToThirdScreen,
 }: Props) {
+  
   const [numbersFieldValue, setNumbersFieldValue] = useState("7");
   const [checkboxState, setCheckboxState] = useState(false);
 
-  console.log(numbersFieldValue);
-  console.log(checkboxState);
 
   return (
     <ScreenLayout switchToFirstScreen={switchToFirstScreen}>
@@ -35,7 +34,10 @@ function InputNumberScreen({
         <h2 className={InputNumberScreenStyles.subtext}>
           и с Вами свяжется наш менеждер для дальнейшей консультации
         </h2>
-        <NumbersPanel />
+        <NumbersPanel
+          setNumbersFieldValue={setNumbersFieldValue}
+          numbersFieldValue={numbersFieldValue}
+        />
         <Checkbox
           checkboxState={checkboxState}
           setCheckboxState={setCheckboxState}
