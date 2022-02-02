@@ -1,10 +1,12 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import CheckboxStyles from "./Checkbox.module.scss";
 import check from "../../assets/check.png";
-type Props = {};
+type Props = {
+  checkboxState: boolean;
+  setCheckboxState: Dispatch<SetStateAction<boolean>>;
+};
 
-function Checkbox({}: Props) {
-  const [checkboxState, setCheckboxState] = React.useState(false);
+function Checkbox({ checkboxState, setCheckboxState }: Props) {
   return (
     <label htmlFor="checkbox" className={CheckboxStyles.checkboxWrapper}>
       <input className={CheckboxStyles.hidden} type="checkbox" id="checkbox" />

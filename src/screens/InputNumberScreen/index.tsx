@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Checkbox from "../../components/Checkbox";
 import InputNumbersField from "../../components/InputNumbersField";
 import NumbersPanel from "../../components/NumbersPanel";
@@ -14,9 +14,11 @@ function InputNumberScreen({
   switchToFirstScreen,
   switchToThirdScreen,
 }: Props) {
-  const [numbersFieldValue, setNumbersFieldValue] = React.useState("7");
+  const [numbersFieldValue, setNumbersFieldValue] = useState("7");
+  const [checkboxState, setCheckboxState] = useState(false);
 
   console.log(numbersFieldValue);
+  console.log(checkboxState);
 
   return (
     <ScreenLayout switchToFirstScreen={switchToFirstScreen}>
@@ -34,8 +36,17 @@ function InputNumberScreen({
           и с Вами свяжется наш менеждер для дальнейшей консультации
         </h2>
         <NumbersPanel />
-        <Checkbox />
-        <button className={InputNumberScreenStyles.confirmBtn}>
+        <Checkbox
+          checkboxState={checkboxState}
+          setCheckboxState={setCheckboxState}
+        />
+        <button
+          className={`${InputNumberScreenStyles.confirmBtn} ${
+            numbersFieldValue.length === 11 &&
+            checkboxState &&
+            InputNumberScreenStyles.active
+          }`}
+        >
           подтвердить номер
         </button>
       </>
