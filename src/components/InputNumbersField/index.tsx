@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { IMaskInput } from "react-imask";
 import "./InputNumbersField.module.scss";
-type Props = {};
+type Props = {
+  setNumbersFieldValue: Dispatch<SetStateAction<string>>;
+  numbersFieldValue: string;
+};
 
-function InputNumbersField({}: Props) {
-  const [inputValue, setInputValue] = useState<string>("+7(___)___-__-__");
+function InputNumbersField({ numbersFieldValue, setNumbersFieldValue }: Props) {
 
   return (
     <IMaskInput
       mask={"+{7}(000)000-00-00"}
-      value={inputValue}
-      unmask={false}
+      value={numbersFieldValue}
+      unmask={true}
       lazy={false}
+      onAccept={(value) => setNumbersFieldValue(value)}
     />
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Checkbox from "../../components/Checkbox";
 import InputNumbersField from "../../components/InputNumbersField";
+import NumbersPanel from "../../components/NumbersPanel";
 import ScreenLayout from "../../components/ScreenLayout";
 import InputNumberScreenStyles from "./InputNumberScreen.module.scss";
 
@@ -13,6 +14,10 @@ function InputNumberScreen({
   switchToFirstScreen,
   switchToThirdScreen,
 }: Props) {
+  const [numbersFieldValue, setNumbersFieldValue] = React.useState("7");
+
+  console.log(numbersFieldValue);
+
   return (
     <ScreenLayout switchToFirstScreen={switchToFirstScreen}>
       <>
@@ -20,12 +25,15 @@ function InputNumberScreen({
           Введите ваш номер мобильного телефона
         </h1>
         <div className={InputNumberScreenStyles.inputWrapper}>
-          <InputNumbersField />
+          <InputNumbersField
+            setNumbersFieldValue={setNumbersFieldValue}
+            numbersFieldValue={numbersFieldValue}
+          />
         </div>
         <h2 className={InputNumberScreenStyles.subtext}>
           и с Вами свяжется наш менеждер для дальнейшей консультации
         </h2>
-        <div className={InputNumberScreenStyles.numbersPanel}></div>
+        <NumbersPanel />
         <Checkbox />
         <button className={InputNumberScreenStyles.confirmBtn}>
           подтвердить номер
