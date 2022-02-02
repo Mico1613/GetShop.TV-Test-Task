@@ -6,7 +6,7 @@
   transform: translateX(250px);
 }
 .animation {
-  animation: showBanner 0.5s forwards;
+  animation: showBanner 1s ease-in-out forwards;
 }
 @keyframes showBanner {
   0% {
