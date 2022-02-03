@@ -12,7 +12,7 @@ function NumbersPanel({ numbersFieldValue, setNumbersFieldValue }: Props) {
     ref.current && ref.current.focus();
   }, []);
 
-  const [currentFocus, setCurrentFocus] = React.useState<number>(1);
+  const [currentFocus, setCurrentFocus] = React.useState<number | null>(1);
 
   const buttons = [
     {
@@ -257,7 +257,9 @@ function NumbersPanel({ numbersFieldValue, setNumbersFieldValue }: Props) {
       });
     }
     if (e.code.startsWith("Digit")) {
-      setNumbersFieldValue(numbersFieldValue + parseInt(e.key));
+      if (numbersFieldValue.length <= 10) {
+        setNumbersFieldValue(numbersFieldValue + parseInt(e.key));
+      }
     }
     if (e.key === "Backspace") {
       setNumbersFieldValue(
@@ -280,6 +282,7 @@ function NumbersPanel({ numbersFieldValue, setNumbersFieldValue }: Props) {
               keyHandler(e);
             }}
             onClick={() => clickHandler(button.id, button.value)}
+            onBlur={() => setCurrentFocus(null)}
           >
             {button.value}
           </button>
