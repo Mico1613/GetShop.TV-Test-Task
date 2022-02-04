@@ -3,6 +3,8 @@ import AppStyles from "./App.module.scss";
 import InfoScreen from "./screens/InfoScreen";
 import InputNumberScreen from "./screens/InputNumberScreen";
 import PromoVideoScreen from "./screens/PromoVideoScreen";
+import video from "./assets/video.mp4";
+
 function App() {
   const switchToFirstScreen = () => {
     setCurrentScreen(screens.first);
@@ -13,8 +15,14 @@ function App() {
   const switchToThirdScreen = () => {
     setCurrentScreen(screens.third);
   };
+
   const screens = {
-    first: <PromoVideoScreen switchToSecondScreen={switchToSecondScreen} />,
+    first: (
+      <PromoVideoScreen
+        switchToSecondScreen={switchToSecondScreen}
+        video={video}
+      />
+    ),
     second: (
       <InputNumberScreen
         switchToFirstScreen={switchToFirstScreen}

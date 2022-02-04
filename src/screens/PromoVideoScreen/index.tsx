@@ -1,11 +1,11 @@
-import video from "../../assets/video.mp4";
 import Banner from "../../components/Banner";
 
 type Props = {
   switchToSecondScreen: () => void;
+  video?: string;
 };
 
-function PromoVideoScreen({ switchToSecondScreen }: Props) {
+function PromoVideoScreen({ switchToSecondScreen, video }: Props) {
   return (
     <div>
       <Banner switchToSecondScreen={switchToSecondScreen} />

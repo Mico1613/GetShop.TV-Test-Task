@@ -28,4 +28,7 @@
   .checkboxText {
     text-align: left;
   }
+  .focused {
+    box-shadow: 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
+  }
 }

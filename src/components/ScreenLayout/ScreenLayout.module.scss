@@ -1,3 +1,14 @@
+// preload background image
+body::after {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  z-index: -1;
+  content: url("../../assets/background.png");
+}
+
 .flex {
   display: flex;
   height: 100%;
@@ -40,4 +51,7 @@
       margin-right: 10px;
     }
   }
+}
+.focused {
+  box-shadow: 2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
 }

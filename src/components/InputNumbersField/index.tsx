@@ -1,12 +1,23 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { IMaskInput } from "react-imask";
-import "./InputNumbersField.module.scss";
+import InputStyles from "./InputNumbersField.module.scss";
 type Props = {
   setNumbersFieldValue: Dispatch<SetStateAction<string>>;
   numbersFieldValue: string;
 };
 
 function InputNumbersField({ numbersFieldValue, setNumbersFieldValue }: Props) {
+  const [focused, setFocused] = useState(false);
+  const ref = useRef<HTMLTextAreaElement | HTMLInputElement | null>(null);
+  useEffect(() => {
+    ref.current && ref.current.focus();
+  }, []);
 
   return (
     <IMaskInput
@@ -15,6 +26,18 @@ function InputNumbersField({ numbersFieldValue, setNumbersFieldValue }: Props) {
       unmask={true}
       lazy={false}
       onAccept={(value) => setNumbersFieldValue(value)}
+      tabIndex={0}
+      inputRef={(el) => (ref.current = el)}
+      onFocus={() => {
+        setFocused(true);
+        if (ref.current) {
+          ref.current.selectionStart = 3;
+          ref.current.selectionEnd = 3;
+        }
+        console.dir(ref.current);
+      }}
+      onBlur={() => setFocused(false)}
+      className={`${focused && InputStyles.focused}`}
     />
   );
 }

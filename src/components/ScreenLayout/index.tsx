@@ -8,11 +8,18 @@ type Props = {
 };
 
 function ScreenLayout({ children, switchToFirstScreen }: Props) {
+  const [focused, setFocused] = React.useState(false);
   return (
     <div className={ScreenLayoutStyles.flex}>
       <div className={ScreenLayoutStyles.contentSide}>{children}</div>
       <div className={ScreenLayoutStyles.background}>
-        <div className={ScreenLayoutStyles.closeBtnWrapper}>
+        <div
+          className={`${ScreenLayoutStyles.closeBtnWrapper} ${
+            focused && ScreenLayoutStyles.focused
+          }`}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+        >
           <button onClick={switchToFirstScreen}>
             <img width="88px" height="52px" src={closeBtn} alt="Закрыть" />
           </button>

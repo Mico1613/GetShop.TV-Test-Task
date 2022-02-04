@@ -14,10 +14,17 @@ function InputNumberScreen({
   switchToFirstScreen,
   switchToThirdScreen,
 }: Props) {
-  
+  const [btnFocus, setBtnFocus] = useState(false);
   const [numbersFieldValue, setNumbersFieldValue] = useState("7");
   const [checkboxState, setCheckboxState] = useState(false);
-
+  
+  const btnClasses = () => {
+    return `${InputNumberScreenStyles.confirmBtn} ${
+      numbersFieldValue.length === 11 &&
+      checkboxState &&
+      InputNumberScreenStyles.active
+    } ${btnFocus && InputNumberScreenStyles.focused}`;
+  };
 
   return (
     <ScreenLayout switchToFirstScreen={switchToFirstScreen}>
@@ -43,11 +50,14 @@ function InputNumberScreen({
           setCheckboxState={setCheckboxState}
         />
         <button
-          className={`${InputNumberScreenStyles.confirmBtn} ${
-            numbersFieldValue.length === 11 &&
-            checkboxState &&
-            InputNumberScreenStyles.active
-          }`}
+          className={btnClasses()}
+          onClick={() => {
+            if (checkboxState && numbersFieldValue.length === 11) {
+              switchToThirdScreen();
+            }
+          }}
+          onFocus={() => setBtnFocus(true)}
+          onBlur={() => setBtnFocus(false)}
         >
           подтвердить номер
         </button>
