@@ -32,7 +32,7 @@ function App() {
     third: <InfoScreen switchToFirstScreen={switchToFirstScreen} />,
   };
 
-  const [currentScreen, setCurrentScreen] = useState(screens.second);
+  const [currentScreen, setCurrentScreen] = useState(screens.first);
 
   return (
     <div className={AppStyles.app}>

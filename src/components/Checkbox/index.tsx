@@ -39,7 +39,7 @@ function Checkbox({ checkboxState, setCheckboxState }: Props) {
       </span>
       <p className={CheckboxStyles.checkboxText}>
         Согласие на обработку
-        <br />
+        <br/>
         персональных данных
       </p>
     </label>

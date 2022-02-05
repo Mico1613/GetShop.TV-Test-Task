@@ -15,7 +15,7 @@ function InfoScreen({ switchToFirstScreen }: Props) {
         </h1>
         <p className={InfoScreenStyles.text}>
           Держите телефон под рукой.
-          <br /> Скоро с Вами свяжется наш менеджер.
+          <br />Скоро с Вами свяжется наш менеджер.
         </p>
       </div>
     </ScreenLayout>

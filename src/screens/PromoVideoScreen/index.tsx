@@ -2,7 +2,7 @@ import Banner from "../../components/Banner";
 
 type Props = {
   switchToSecondScreen: () => void;
-  video?: string;
+  video: string;
 };
 
 function PromoVideoScreen({ switchToSecondScreen, video }: Props) {

@@ -1,7 +1,7 @@
 import React from "react";
 import ScreenLayoutStyles from "./ScreenLayout.module.scss";
 import qr from "../../assets/qr.png";
-import closeBtn from "../../assets/closeBtnBlack.png";
+import closeBtn from "../../assets/closeBtn.png";
 type Props = {
   children?: React.ReactChild;
   switchToFirstScreen: () => void;

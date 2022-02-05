@@ -34,7 +34,6 @@ function InputNumbersField({ numbersFieldValue, setNumbersFieldValue }: Props) {
           ref.current.selectionStart = 3;
           ref.current.selectionEnd = 3;
         }
-        console.dir(ref.current);
       }}
       onBlur={() => setFocused(false)}
       className={`${focused && InputStyles.focused}`}
